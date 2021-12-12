@@ -28,9 +28,8 @@
     "@mdx-js/loader": "^1.6.22",
     "@mdxp/pdf": "^0.2.1",
     "@mdxp/rehypex-plugins": "^0.2.1",
-    "@svgr/webpack": "^5.4.0",
+    "@svgr/webpack": "^6.1.1",
     "babel-loader": "^8.1.0",
-    "cross-env": "^7.0.2",
     "css-loader": "^6.5.1",
     "file-loader": "^6.2.0",
     "html-loader": "^3.0.1",
@@ -52,12 +51,12 @@
     "yarn-or-npm": "^3.0.1"
   },
   "dependencies": {
-    "@mdx-js/react": "^1.5.9",
+    "@mdx-js/react": "^1.6.22",
     "@mdxp/components": "^0.2.1",
     "@mdxp/core": "^0.2.5",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "theme-ui": "^0.3.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "theme-ui": "^0.12.1"
   },
   "packageManager": "yarn@3.1.1"
 }
