@@ -8,28 +8,16 @@ import * as components from '@mdxp/components';
 
 import theme from 'theme/theme.js';
 import themeComponents from 'theme/theme-components.js';
+import MDXConcat from 'components/MDXConcat.jsx'
 
 import './index.css';
 import MDXPresentation from './presentation.mdx';
 import One from './one.mdx';
 import Two from './two.mdx';
-import Empty from './empty.mdx';
+
 
 //console.log(One({}));
 //console.log([...One({}).props.children, ...MDXPresentation({}).props.children]);
-
-function MDXConcat({children}) {
-  console.log(children);
-  const allMDXChildren = [];
-  React.Children.toArray(children).forEach(child => {
-    // TODO: Inject 'hr' between sets of children if not already there.
-    allMDXChildren.push(...React.Children.toArray(child.type({}).props.children));
-  });
-  console.log(allMDXChildren);
-  const retElem = React.cloneElement(Empty({}), null, allMDXChildren);
-  console.log(retElem);
-  return retElem;
-}
 
 function EntryPoint(props) {
   return (
