@@ -25,13 +25,14 @@ export default (env) => {
   const PUBLIC_PATH = env.PUBLIC_PATH || '/';
   const ANALYZE = Boolean(env.ANALYZE) || false;
   const MDXP_MODE = (env.MDXP_MODE || 'web').toLowerCase();
+  const DECK = env.DECK || '';
 
   // Mode Config
   let cfg = null;
   if (MDXP_MODE === 'onepage') {
     cfg = {
       output: {
-        path: path.resolve(__dirname, 'dist/onepage'),
+        path: path.resolve(__dirname, `dist/${DECK}/onepage`),
         filename: 'main.js',
         publicPath: './'
       },
@@ -52,7 +53,7 @@ export default (env) => {
   } else {
     cfg = {
       output: {
-        path: path.resolve(__dirname, 'dist/web'),
+        path: path.resolve(__dirname, `dist/${DECK}/web`),
         filename: 'main.js',
         publicPath: PUBLIC_PATH
       },
