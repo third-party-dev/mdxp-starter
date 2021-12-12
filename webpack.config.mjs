@@ -168,7 +168,8 @@ export default (env) => {
       new WebpackBar(),
       new HtmlWebPackPlugin({
         template: path.resolve(__dirname, 'src/index.html'),
-        filename: './index.html'
+        filename: './index.html',
+        inject: 'body',
       }),
       new webpack.DefinePlugin({
         'process.env.PUBLIC_PATH': JSON.stringify(PUBLIC_PATH)
