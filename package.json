@@ -5,16 +5,11 @@
   "description": "MDXP Main Presentation",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --mode development",
-    "build:web": "webpack --mode production --env MDXP_MODE=web --env PUBLIC_PATH=./ --env ANALYZE=true",
-    "build:onepage": "webpack --mode development --env MDXP_MODE=onepage",
-    "cruft:onepage": "rimraf dist/onepage/*.js dist/onepage/*.css",
-    "build:pdf": "pdf -u ./dist/onepage/index.html ./dist/presentation.pdf",
-    "clean": "rimraf dist/**/* dist/*.pdf",
-    "clean:web": "rimraf dist/web/*",
-    "clean:onepage": "rimraf dist/onepage/*",
-    "clean:pdf": "rimraf dist/*.pdf",
-    "analyze:web": "webpack-bundle-analyzer dist/web/stats.json"
+    "mdxp": "node build.mjs",
+    "mdxp:dev": "node build.mjs serve",
+    "mdxp:web": "node build.mjs build --format web",
+    "mdxp:onepage": "node build.mjs build --format onepage",
+    "mdxp:pdf": "node build.mjs build --format pdf"
   },
   "browserslist": [
     "> 1%",
@@ -41,7 +36,6 @@
     "remark-code-import": "^0.4.0",
     "remark-emoji": "^3.0.2",
     "remark-math": "^5.1.1",
-    "rimraf": "^3.0.2",
     "style-loader": "^3.3.1",
     "url-loader": "^4.1.1",
     "webpack": "^5.65.0",
@@ -49,6 +43,7 @@
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.6.0",
     "webpackbar": "^5.0.2",
+    "yargs": "^17.3.0",
     "yarn-or-npm": "^3.0.1"
   },
   "dependencies": {
