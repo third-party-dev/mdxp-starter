@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import Deck, {Zoom} from '@mdxp/core';
 import * as components from '@mdxp/components';
 
-import theme from './theme/theme.js';
-import themeComponents from './theme/theme-components.js';
+import theme from 'theme/theme.js';
+import themeComponents from 'theme/theme-components.js';
 
 import './index.css';
 import MDXPresentation from './presentation.mdx';

@@ -43,7 +43,13 @@ export default (env) => {
             {modules: false}
           ],
           '@babel/preset-react'
-        ]
+        ],
+        plugins: [
+          ["module-resolver",
+          {
+            root: ["./src"],
+          }],
+        ],
       },
       inlineImageLimit: 10485760,
       plugins: [
@@ -64,7 +70,13 @@ export default (env) => {
             {modules: false}
           ],
           '@babel/preset-react'
-        ]
+        ],
+        plugins: [
+          ["module-resolver",
+          {
+            root: ["./src"],
+          },
+        ]],
       },
       inlineImageLimit: 8192,
       plugins: []
@@ -82,7 +94,8 @@ export default (env) => {
 
   return {
 
-    entry: './src/index.jsx',
+    //entry: './src/index.jsx',
+    entry: `./decks/${DECK}/index.jsx`,
     output: cfg.output,
 
     module: {
@@ -168,7 +181,7 @@ export default (env) => {
     plugins: [
       new WebpackBar(),
       new HtmlWebPackPlugin({
-        template: path.resolve(__dirname, 'src/index.html'),
+        template: path.resolve(__dirname, `decks/${DECK}/index.html`),
         filename: './index.html',
         inject: 'body',
       }),
