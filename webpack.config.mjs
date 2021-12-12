@@ -1,20 +1,26 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
-const WebpackBar = require('webpackbar');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const remarkCodeImport = require('remark-code-import');
-const remarkEmoji = require('remark-emoji');
-const remarkMath = require('remark-math');
-const remarkFlattenImages = require('mdast-flatten-image-paragraphs');
-const rehypeAutoImport = require('@mdxp/rehypex-plugins/auto-import');
-const rehypeBetterMedia = require('@mdxp/rehypex-plugins/better-media');
-const rehypeTableAlign = require('@mdxp/rehypex-plugins/table-align');
-const rehypeKatex = require('rehype-katex');
+import path from 'path';
+import webpack from 'webpack';
+import HtmlWebPackPlugin from 'html-webpack-plugin';
+import InlineChunkHtmlPlugin from 'react-dev-utils/InlineChunkHtmlPlugin.js';
+import WebpackBar from 'webpackbar';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import remarkCodeImport from 'remark-code-import';
+import remarkEmoji from 'remark-emoji';
+import remarkMath from 'remark-math';
+import remarkFlattenImages from 'mdast-flatten-image-paragraphs';
+import rehypeAutoImport from '@mdxp/rehypex-plugins/auto-import.js';
+import rehypeBetterMedia from '@mdxp/rehypex-plugins/better-media.js';
+import rehypeTableAlign from '@mdxp/rehypex-plugins/table-align.js';
+import rehypeKatex from 'rehype-katex';
+
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Main Config
-module.exports = (env) => {
+export default (env) => {
   // Variables
   const PUBLIC_PATH = env.PUBLIC_PATH || '/';
   const ANALYZE = Boolean(env.ANALYZE) || false;
